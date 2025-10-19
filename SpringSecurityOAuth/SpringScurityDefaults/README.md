@@ -65,7 +65,25 @@ When spring security is on the classpath, spring boot works to configure your ap
 * Spring security helps you with this by adding an application firewall that, by default, rejects requests that contain double encoding and several unsafe characters like carriage returns and linefeeds. 
 * Using spring security's firewall helps mitigate entire classes of vulnerabilities.
 
+## Commands Used
 
+```bash
+http -a user:df5187fc-68de-4012-9b31-049d4fcc0737 :8080/cashcards
+http -a user:df5187fc-68de-4012-9b31-049d4fcc0737 :8080/cashcards "Accept:applicaton/json" amount=1 owner=sarah1
+
+```
+
+## Trying to hack the application
+
+```bash
+http :8080/admin
+HTTP/1.1 401 
+```
+In the below example '/' is represented by '%2F'. Spring's firewall rejects the request by default. And hence the status is `400 Bad Request`
+```bash
+http :8080/admin%2Faction
+HTTP/1.1 400 
+```
 
 
 
