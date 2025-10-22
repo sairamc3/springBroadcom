@@ -76,4 +76,7 @@ public ResponseEntity<Iterable<CashCard>> findAll(@CurrentOwner String owner) { 
 
 ## `@AuthenticationPrincipal`
 
-Spring security ships with its own meta-like annotation for `@CurrentSecurityContext` called `@AuthenticationPrincipal`, which is equivalent to `@CurrentSecurityContext(expression="authentication.principal")` 
+Spring security ships with its own meta-like annotation for `@CurrentSecurityContext` called `@AuthenticationPrincipal`, which is equivalent to `@CurrentSecurityContext(expression="authentication.principal")`
+
+---
+<- [Home](../README.md)

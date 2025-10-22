@@ -24,3 +24,11 @@ You can see these three steps in action:
     * The HTTP Basic is stateless. 
     * Whenever a third-party client application calls the REST API, it needs to hand over your username and password each and every time you make an HTTP Request. 
     * It also means, the client application needs to hold your username and password in plain text somewhere so that it can hand them repeatedly to your REST API.
+
+## Next Notes
+
+- [UnSecured](Unsecured/README.md)
+- [SpringSecurityDefaults](SpringScurityDefaults/README.md)
+- [OAuthJWTAuthentication](OAuthJWTAuthentication/README.md)
+- [OAuthJWTAuthenticationExercise](OAuthJWTAuthentication/Exercise.md)
+- [OAuthAccessingAuthentication](OAuthAccessingAuthentication/README.md)

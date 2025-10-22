@@ -118,4 +118,5 @@ X-XSS-Protection: 0
 
 > At this point of time, I don't know how to generate the JWT token, hence using the one from the exercise. It has expiry date 10 hours from the time it is generated, which is the lab start time. Hence, the token cannot be used after that time.  
 
-
+---
+<- [Home](../README.md)

@@ -84,3 +84,6 @@ For resource servers, let's review the steps.
 3. *If the credential passes it translates that credential into a principal and authorities.* Spring security stores the JWT's claims as the principal. It takes the `scope` claim and parses each individual value into a permission with the patter SCOPE_${value}
 
 This principal and authorities are then stored by Spring Security and accessible for the remainder of the request.
+
+---
+<- [Home](../README.md)
