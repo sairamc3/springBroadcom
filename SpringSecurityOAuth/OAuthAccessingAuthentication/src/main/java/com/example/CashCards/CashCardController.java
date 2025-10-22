@@ -1,10 +1,15 @@
 package com.example.CashCards;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.CurrentSecurityContext;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 @RestController
 @RequestMapping("/cashcards")
@@ -24,8 +29,11 @@ public class CashCardController {
     }
 
     @PostMapping
-    private ResponseEntity<CashCard> createCashCard(@RequestBody CashCard cashCard, UriComponentsBuilder ucb){
-        CashCard savedCashCard = this.repository.save(cashCard);
+    private ResponseEntity<CashCard> createCashCard(@RequestBody CashCardRequest cashCardRequest,
+                                                    UriComponentsBuilder ucb,
+    @CurrentOwner String owner){
+        CashCard newCashCard = new CashCard(cashCardRequest.amount(), owner);
+        CashCard savedCashCard = this.repository.save(newCashCard);
         URI newCashCardLocation = ucb.path("cashcards/{id}")
                 .buildAndExpand(savedCashCard.id())
                 .toUri();
@@ -34,7 +42,11 @@ public class CashCardController {
     }
 
     @GetMapping
-    public ResponseEntity<Iterable<CashCard>> findAll(){
-        return ResponseEntity.ok(this.repository.findAll());
+    public ResponseEntity<Iterable<CashCard>> findAll(@CurrentOwner String owner){
+
+
+        Iterable<CashCard> all = this.repository.findByOwner(owner);
+
+        return ResponseEntity.ok(all);
     }
 }
