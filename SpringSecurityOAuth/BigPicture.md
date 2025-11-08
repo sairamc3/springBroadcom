@@ -88,7 +88,27 @@ As you can see in pseudo-code above:
 
 The `AuthenticationManager` is composed of several `AuthenticationProviders`, each of which handle a single authentication scheme, like authenticating a JWT. 
 
-#### 
+#### Security Context
+
+The `SecurityContext` is an object that holds the current `Authentication`
+
+```mermaid
+flowchart LR
+    subgraph SecurityContextHolder
+        subgraph SecurityContext
+            subgraph Authentication
+                Principal["1. Principal"]
+                Credentials["2. Credentials"]
+                Authorities["3. Authorities"]
+            end
+        end
+    end
+
+```
+
+The reason for `SecurityContext` is so that the application can hold additional security information other than the current user, if they want to;
+However, this is the feature that is very rarely exercised in spring security. 
+
 
 ### Authorization filters
 ### Infrastructural filters
