@@ -33,3 +33,4 @@ You can see these three steps in action:
 - [OAuthJWTAuthenticationExercise](OAuthJWTAuthentication/Exercise.md)
 - [OAuthAccessingAuthentication](OAuthAccessingAuthentication/README.md)
 - [BigPicture](BigPicture.md)
+- [AccessingAuthenticationAnywhere](OAuthAccessingAuthenticationAnywhere/AccessingAuthenticationAnywhere.md)
