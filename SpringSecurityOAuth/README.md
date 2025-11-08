@@ -32,3 +32,4 @@ You can see these three steps in action:
 - [OAuthJWTAuthentication](OAuthJWTAuthentication/README.md)
 - [OAuthJWTAuthenticationExercise](OAuthJWTAuthentication/Exercise.md)
 - [OAuthAccessingAuthentication](OAuthAccessingAuthentication/README.md)
+- [BigPicture](BigPicture.md)
