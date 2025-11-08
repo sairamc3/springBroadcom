@@ -92,7 +92,21 @@ public class CashCardSpringSecurityTests {
         this.mvc.perform(MockMvcRequestBuilders.get("/cashcards/100")
                         .header("Authorization", "Bearer " + token))
                 .andExpect(MockMvcResultMatchers.status().isUnauthorized())
-                .andExpect(MockMvcResultMatchers.header().string("WWW-Authenticate", Matchers.containsString("audiance is wrong")));
+                .andExpect(MockMvcResultMatchers.header().string("WWW-Authenticate", Matchers.containsString("The aud claim is not valid")));
+
+    }
+
+    @Test
+    void shouldNotAllowTokensThatAreExpired() throws Exception{
+
+        String token = mint(claims ->
+                claims.issuedAt(Instant.now().minusSeconds(3600))
+                        .expiresAt(Instant.now().minusSeconds(3599)));
+
+        this.mvc.perform(MockMvcRequestBuilders.get("/cashcards/100")
+                        .header("Authorization", "Bearer " + token))
+                .andExpect(MockMvcResultMatchers.status().isUnauthorized())
+                .andExpect(MockMvcResultMatchers.header().string("WWW-Authenticate", Matchers.containsString("Jwt expired")));
 
     }
 }

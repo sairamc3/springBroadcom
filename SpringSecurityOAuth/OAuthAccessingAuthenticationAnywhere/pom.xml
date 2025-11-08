@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>OAuthAccessingAuthentication</artifactId>
+	<artifactId>OAuthAccessingAuthenticationAnywhere</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>OAuthAccessingAuthentication</name>
-	<description>Accessing Authentication in Spring MVC</description>
+	<name>OAuthAccessingAuthenticationAnywhere</name>
+	<description>Accessing Authentication in Spring MVC using static class instead of spring mvc</description>
 	<url/>
 	<licenses>
 		<license/>

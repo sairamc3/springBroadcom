@@ -85,4 +85,9 @@ Spring security ships with both a `JwtDecoder` and `JwtEncoder` API
 We are going to use Spring boot properties and write tests that mint their own token to confirm spring security's validation rules.
 
 1. A new test class has been added. It has the configurations to create the JWT token. [CashCardSpringSecurityTests.java](src/test/java/com/example/CashCards/CashCardSpringSecurityTests.java)
-2. **Minting Tokens in our tests**
+2. The test cases adds additional validation to test the response from the application
+3. It tests two scenarios where 
+   * The token has wrong audience
+   * The token is expired
+
+The changes are done in the test class and application.properties.
